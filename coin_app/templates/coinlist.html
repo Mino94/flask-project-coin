@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+    <h1 class="fw-light">비트코인 시세</h1>
+    <br>
+      <p class="lead text-muted">
+      아래서 확인하세요!
+      <br>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock  %}
+{% block main_body  %}
+
+{% if coin_list %}
+
+<table class="table text-center">
+  <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">코인</th>
+        <th scope="col">종가</th>
+        <th scope="col">단위 거래량</th>
+        <th scope="col">24시 변동가격</th>
+        <th scope="col">24시 변동률</th>
+    </tr>
+  </thead>
+  <tbody>
+  <form action="/api/goodcoin" method="post">
+    <p><input type=submit value="등록"></p>
+    {% for coin in coin_list %}
+      <tr>
+        <th><input type="checkbox" value="{{ coin.id }}" name="numcoin"></th>
+        <td>{{ coin.name }}</td>
+        <td>{{ coin.closing_price }}</td>
+          <td>{{ coin.units_traded }}</td>
+          <td>{{ coin.fluctate_24H }}</td>
+          <td>{{ coin.fluctate_rate_24H }}</td>
+          <td>
+            <a class="btn btn-secondary", href='/api/coin/{{ coin.id }}'>
+              Detail
+            </a>
+          </td>
+      </tr>
+    {% endfor %}
+  </form>
+  </tbody>
+</table>
+
+{% endif %}
+
+{% endblock  %}

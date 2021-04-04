@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Tweet</h1>
+            <br>
+            <p class="lead text-muted">
+                Tweet List
+            <br>
+            </p>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+{% block main_body %}
+{% if tweet_list %}
+<table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="row">#</th>
+        <th scope="col">Tweet Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tweet in tweet_list %}
+        <tr>
+            <td>{{ tweet.id }}</td>
+            <td>{{ tweet.text }}</td>
+            <td>
+        </tr>
+      {% endfor %}
+    </form>
+    </tbody>
+  </table>
+{% endif %}
+
+{% endblock  %}

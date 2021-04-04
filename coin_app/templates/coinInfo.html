@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">{{ coin_info.name }} 상세정보</h1>
+            <br>
+            <p class="lead text-muted">
+                마음에 드는 코인으로 등록하기!
+            <br>
+                <a class="btn btn-secondary", href='/get/tweet/{{ coin_info.name }}'>
+                    Tweet
+                </a>
+            </p>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+{% block main_body  %}
+<div class="row">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Coin Name
+                <span class="badge badge-warning">{{ coin_info.name }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                opening_price
+                <span class="badge badge-warning">{{ coin_info.opening_price }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                closing_price
+                <span class="badge badge-warning">{{ coin_info.closing_price }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                prev_closing_price
+                <span class="badge badge-warning">{{ coin_info.prev_closing_price }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                min_price
+                <span class="badge badge-warning">{{ coin_info.min_price }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                max_price
+                <span class="badge badge-warning">{{ coin_info.max_price }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                units_traded
+                <span class="badge badge-warning">{{ coin_info.units_traded }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                units_traded_24H
+                <span class="badge badge-warning">{{ coin_info.units_traded_24H }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                acc_trade_value
+                <span class="badge badge-warning">{{ coin_info.acc_trade_value }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                acc_trade_value_24H
+                <span class="badge badge-warning">{{ coin_info.acc_trade_value_24H }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                fluctate_24H
+                <span class="badge badge-warning">{{ coin_info.fluctate_24H }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                fluctate_rate_24H
+                <span class="badge badge-warning">{{ coin_info.fluctate_rate_24H }}</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+{% endblock  %}

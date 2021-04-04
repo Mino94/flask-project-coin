@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">코인 등록 리스트</h1>
+            <br>
+            <p class="lead text-muted">
+                수정, 삭제 가능
+            <br>
+            
+            </p>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+{% block main_body %}
+{% if register_coin %}
+<table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="row">#</th>
+        <th scope="col">코인 이름</th>
+        <th scope="col">코인 종가</th>
+        <th scope="col">코인 변동률</th>
+        <th scope="col">삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for coin in register_coin %}
+        <tr>
+            <td>{{ coin[0] }}</td>
+            <td>{{ coin[1] }}</td>
+            <td>{{ coin[2] }}</td>
+            <td>{{ coin[3] }} %</td>
+            <td>
+                <a class="btn btn-secondary", href='/api/regiscoin/{{ coin[0] }}'>
+                    Delete
+                </a>
+            </td>
+        </tr>
+      {% endfor %}
+    </form>
+    </tbody>
+  </table>
+{% endif %}
+
+{% endblock  %}
