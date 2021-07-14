@@ -11,3 +11,4 @@
 - VS code
 - Python 3.7
 - html, css, Bootstrap4
+- PostgreSQL
