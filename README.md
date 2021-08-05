@@ -12,3 +12,5 @@
 - Python 3.7
 - html, css, Bootstrap4
 - PostgreSQL
+
+*빗썸 api, 트위터 api
